@@ -2,7 +2,7 @@ version: '3.7'
 services:
   
   formio-api-app:
-    image: tiredofit/formio-api
+    image: brightonrolls/docker-formio-api
     container_name: formio-api-app
     labels:
     - traefik.enable=true
@@ -14,18 +14,18 @@ services:
     volumes:
     - ./templates:/app/templates
     environment:
-    - VIRTUAL_HOST=formio.example.com
+    - VIRTUAL_HOST=formio.becks.network
     - VIRTUAL_NETWORK=proxy
     - VIRTUAL_PORT=3001
-    - LETSENCRYPT_HOST=formio.example.com
-    - LETSENCRYPT_EMAIL=email@example.com
+    - LETSENCRYPT_HOST=formio.becks.network
+    - LETSENCRYPT_EMAIL=webmaster@becks.insure
 
     - CONTAINER_NAME=formio-app
 
     - DB_HOST=formio-db-mongo
 
-    - ROOT_EMAIL=admin@example.com
-    - ROOT_PASS=password
+    - ROOT_EMAIL=webmaster@becks.insure
+    - ROOT_PASS=Cr@ssways1
 
     - DEBUG_MODE=FALSE
     - PROJECT_TEMPLATE=default
